@@ -8,7 +8,7 @@ routes.get('/livros', async (req: Request, res: Response) => {
     res.status(200).json(books);
 });
 
-routes.get('/livros/:uuid', async (req: Request<{uuid: string}>, res: Response, next: NextFunction) => {
+routes.get('/livro/:uuid', async (req: Request<{uuid: string}>, res: Response, next: NextFunction) => {
     try {
         const uuid = req.params.uuid;
         const book = await bookRepository.findBookById(uuid);
@@ -19,7 +19,7 @@ routes.get('/livros/:uuid', async (req: Request<{uuid: string}>, res: Response, 
     }
 });
 
-routes.get('/livro/:nome', async (req: Request<{nome: string}>, res: Response, next: NextFunction) => {
+routes.get('/livros/:nome', async (req: Request<{nome: string}>, res: Response, next: NextFunction) => {
     try {
         const nome = req.params.nome;
         const book = await bookRepository.findBookByName(nome);
@@ -37,7 +37,7 @@ routes.post('/livros', async (req: Request, res: Response) => {
     return res.status(201).json({message: `Novo livro de id: ${uuid} adicionado com sucesso`})
 });
 
-routes.put('/livros/:uuid', async (req: Request<{uuid: string}>, res: Response) => {
+routes.put('/livro/:uuid', async (req: Request<{uuid: string}>, res: Response) => {
     const uuid = req.params.uuid;
     const modifiedBook = req.body;
 
@@ -48,7 +48,7 @@ routes.put('/livros/:uuid', async (req: Request<{uuid: string}>, res: Response) 
     res.status(200).json({message: 'Livro atualizado com sucesso'});
 });
 
-routes.delete('/livros/:uuid', async (req: Request<{uuid: string}>, res: Response) => {
+routes.delete('/livro/:uuid', async (req: Request<{uuid: string}>, res: Response) => {
     const uuid = req.params.uuid;
 
     await bookRepository.deleteBook(uuid);
