@@ -1,11 +1,8 @@
-require('dotenv').config()
 import express, { Request, Response, urlencoded } from 'express';
 import routes from './routes/crudeRoutes';
 import welcomeRoute from './routes/welcomePage';
 
 const app = express();
-
-const db = process.env.S3_BUCKET
 
 //Configuração da aplicação
 app.use(urlencoded({extended: true}));
