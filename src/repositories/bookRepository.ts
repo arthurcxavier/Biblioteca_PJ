@@ -33,6 +33,18 @@ class bookRepository {
         }
     }
 
+    async findBookByName(nome: string): Promise<any> {
+        try {
+            const query = `SELECT nome, autor, ano_publicacao FROM biblioteca_pj WHERE nome ILIKE '${nome}%'`;
+
+            const { rows } = await db.query<Book>(query);
+
+            return rows || [];
+        } catch (error) {
+            throw new DatabaseError('Erro na consulta por nome', error);
+        }
+    }
+
     async sendBook(book: Book): Promise<string> {
         const query = `
             INSERT INTO biblioteca_pj (

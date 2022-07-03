@@ -19,6 +19,17 @@ routes.get('/livros/:uuid', async (req: Request<{uuid: string}>, res: Response, 
     }
 });
 
+routes.get('/livro/:nome', async (req: Request<{nome: string}>, res: Response, next: NextFunction) => {
+    try {
+        const nome = req.params.nome;
+        const book = await bookRepository.findBookByName(nome);
+
+        res.status(200).json(book);
+    } catch (error) {
+        next(error);
+    }
+});
+
 routes.post('/livros', async (req: Request, res: Response) => {
     const newBook = req.body;
     const uuid = await bookRepository.sendBook(newBook);
