@@ -1,3 +1,4 @@
+//Modelo de erro no banco de dados
 class DatabaseError extends Error {
     constructor(
         public message: string,

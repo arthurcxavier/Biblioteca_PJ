@@ -1,3 +1,4 @@
+//Conexão com o banco de dados PostgreSQL na nuvem (ElephantSQL)
 import { Pool } from "pg";
 
 const connectionString = `postgres://dxhkhrst:GyzETEJBwWj1_DAb1AgY1iz04tVFevnx@motty.db.elephantsql.com/dxhkhrst`;

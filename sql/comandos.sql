@@ -1,10 +1,10 @@
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+/*Comandos utilizados para a criação do banco de dados*/
 
 CREATE TABLE IF NOT EXISTS biblioteca_pj(
-    uuid uuid DEFAULT uuid_generated_v4(),
-    nome VARCHAR(120) NOT NULL,
-    autor VARCHAR(80) NOT NULL,
-    ano_publicacao INTEGER(4),
+    uuid SERIAL,
+    nome VARCHAR NOT NULL,
+    autor VARCHAR NOT NULL,
+    ano_publicacao INTEGER,
     PRIMARY KEY (uuid)
 );
 

@@ -1,6 +1,6 @@
-import express, { Request, Response, urlencoded } from 'express';
+import express, { urlencoded } from 'express';
 import routes from './routes/crudeRoutes';
-import welcomeRoute from './routes/welcomePage';
+import statusRoute from './routes/statusRoute';
 
 const app = express();
 
@@ -9,7 +9,7 @@ app.use(urlencoded({extended: true}));
 app.use(express.json());
 
 //Configaração de rotas
-app.use(welcomeRoute);
+app.use(statusRoute);
 app.use(routes);
 
 

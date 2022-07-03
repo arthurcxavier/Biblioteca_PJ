@@ -1,4 +1,4 @@
-
+//Modelo de dados de um livro (row)
 type Book = {
     uuid?: string;
     nome: string;
