@@ -7,7 +7,7 @@ function errorHandler(error: any, req: Request, res: Response) {
     if (error instanceof DatabaseError){
         res.status(400).json({erro: "UUID inexistente"}); //400 - Bad Request
     } else {
-        res.status(500); //500 - Internal Server Error
+        res.sendStatus(500); //500 - Internal Server Error
     }
 }
 
