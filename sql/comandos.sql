@@ -1,7 +1,7 @@
 /*Comandos utilizados para a criação do banco de dados*/
 
 CREATE TABLE IF NOT EXISTS biblioteca_pj(
-    uuid SERIAL,
+    uuid uuid DEFAULT uuid_generate_v1(),
     nome VARCHAR NOT NULL,
     autor VARCHAR NOT NULL,
     ano_publicacao INTEGER,
