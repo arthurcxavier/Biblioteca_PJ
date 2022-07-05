@@ -10,8 +10,7 @@ class bookRepository {
 
         //Variável com o comando em SQL
         const query = `
-        SELECT uuid, nome, autor, ano_publicacao
-        FROM biblioteca_pj
+        SELECT * FROM biblioteca_pj
         `;
 
         const {rows} = await db.query<Book>(query); //Realiza-se uma query no BD e são retornadas todas as colunas requisitadas
