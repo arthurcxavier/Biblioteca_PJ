@@ -15,5 +15,5 @@ app.use(routes);
 
 //Inicialização do servidor
 app.listen(3000, () => {
-    console.log('Server online at port 3000');
+    console.log('Server online on port 3000');
 });
