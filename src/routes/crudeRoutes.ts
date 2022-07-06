@@ -17,7 +17,7 @@ routes.get('/livro/:uuid', async (req: Request<{uuid: string}>, res: Response, n
 
         res.status(200).json(book);
     } catch (error) {
-        next(error);
+        res.status(400).json({erro: `UUID Inexistente: ${error}`});
     }
 });
 
@@ -30,7 +30,7 @@ routes.get('/livros/:nome', async (req: Request<{nome: string}>, res: Response, 
 
         res.status(200).json(book);
     } catch (error) {
-        next(error);
+        res.status(500).json({erro: `Nome invalido: ${error}`});
     }
 });
 
